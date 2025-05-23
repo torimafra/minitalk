@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/05/22 17:20:26 by vimafra-          #+#    #+#              #
+#    Updated: 2025/05/22 17:30:22 by vimafra-         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME_C = client
 NAME_S = server
 
@@ -6,7 +18,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS_C = $(NAME_C).c utils.c
-SRCS_S = $(NAME_S).c utils.c
+SRCS_S = $(NAME_S).c itoa.c utils.c
 
 OBJS_C = $(SRCS_C:.c=.o)
 OBJS_S = $(SRCS_S:.c=.o)

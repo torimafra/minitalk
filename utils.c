@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vimafra- <vimafra-@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/22 17:20:13 by vimafra-          #+#    #+#             */
+/*   Updated: 2025/05/22 17:20:15 by vimafra-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "minitalk.h"
 
 void	ft_putstr_fd(char *s, int fd)
@@ -9,14 +21,14 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
-int ft_strlen(char *str)
+int	ft_strlen(char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    while(str[i] != '\0')
-        i++;
-    return (i);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
 }
 
 char	*ft_strdup(char *s)
@@ -25,22 +37,22 @@ char	*ft_strdup(char *s)
 	char			*dup;
 
 	i = 0;
-	dup = (char *)malloc(ft_strlen(s) * sizeof(char) + 1); // Malloca espaço para s + terminator na nova string
+	dup = (char *)malloc(ft_strlen(s) * sizeof(char) + 1);
 	if (!dup)
 		return (NULL);
 	while (s[i] != '\0')
 	{
-		dup[i] = s[i]; // Cópia simples de s para dup
+		dup[i] = s[i];
 		i++;
 	}
-	dup[i] = '\0'; // Null terminates
+	dup[i] = '\0';
 	return (dup);
 }
 
 char	*ft_strjoin(char *s1, char c)
 {
-	char			*result;
-	int	i;
+	char	*result;
+	int		i;
 
 	i = 0;
 	if (!s1 || !c)
@@ -48,7 +60,7 @@ char	*ft_strjoin(char *s1, char c)
 	result = (char *)malloc((ft_strlen(s1) + 2) * sizeof(char));
 	if (result == NULL)
 		return (NULL);
-	while(*s1 != '\0')
+	while (*s1 != '\0')
 	{
 		result[i] = *s1;
 		i++;
@@ -77,7 +89,7 @@ int	ft_atoi(char *nptr)
 			sign = sign * (-1);
 		i++;
 	}
-	while (nptr[i] >= '0' && nptr[i] <= '9') // Encontrando um caractere de número, a função entra nesse loop para iniciar a conversão de char para int
+	while (nptr[i] >= '0' && nptr[i] <= '9')
 	{
 		result = result * 10 + (nptr[i] - '0');
 		i++;
